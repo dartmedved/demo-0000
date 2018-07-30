@@ -1,7 +1,8 @@
-package ru.mp.demo0000;
+package ru.mp.demo0000.task1;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import ru.mp.demo0000.task1.VersionSorter;
 
 import java.util.Arrays;
 import java.util.Collections;

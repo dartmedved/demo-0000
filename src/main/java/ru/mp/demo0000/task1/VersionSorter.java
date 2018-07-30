@@ -1,4 +1,4 @@
-package ru.mp.demo0000;
+package ru.mp.demo0000.task1;
 
 import lombok.experimental.UtilityClass;
 import org.apache.maven.artifact.versioning.ComparableVersion;
