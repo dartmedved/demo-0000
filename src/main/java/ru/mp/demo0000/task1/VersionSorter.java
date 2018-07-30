@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 
 @UtilityClass
 public class VersionSorter {
-    public List<String> sortVersions(final List<String> unsortedVersions){
-        if(unsortedVersions==null || unsortedVersions.isEmpty()){
+    public List<String> sortVersions(final List<String> unsortedVersions) {
+        if (unsortedVersions == null || unsortedVersions.isEmpty()) {
             return Collections.emptyList();
         }
 

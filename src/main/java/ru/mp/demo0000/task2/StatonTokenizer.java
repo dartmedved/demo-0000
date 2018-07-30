@@ -10,7 +10,7 @@ class StatonTokenizer {
             throw new IllegalArgumentException("Station name can't be blank.");
         }
         final String effectiveName = station.getName().trim().toUpperCase();
-        final String code = effectiveName.substring(0, effectiveName.length()>1 ? 2 : 1);
-        return new StationToken(code,station);
+        final String code = effectiveName.substring(0, effectiveName.length() > 1 ? 2 : 1);
+        return new StationToken(code, station);
     }
 }

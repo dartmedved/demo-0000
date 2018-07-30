@@ -1,6 +1,5 @@
 package ru.mp.demo0000.task2;
 
-import lombok.Builder;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,8 +21,9 @@ public class StationTaskTest {
     private StationTask task;
 
     private List<Station> stations;
+
     @Before
-    public void setup(){
+    public void setup() {
         stations = Arrays.asList(
                 new Station("САНКТ-ПЕТЕРБУРГ"),
                 new Station("САМАРА"),
@@ -36,32 +36,32 @@ public class StationTaskTest {
 
 
     @Test
-    public void testOrderedSA(){
+    public void testOrderedSA() {
         final String prefix = "СА";
         final Collection<Station> result = task.getStationsByTwoFirstLetters(prefix);
-        log.info("By 2 letters : {} ---> {}", prefix,result);
-        assertThat(result,is(notNullValue()));
-        assertThat(result,hasSize(2));
-        assertThat(result,contains(stations.get(1), stations.get(0)));
+        log.info("By 2 letters : {} ---> {}", prefix, result);
+        assertThat(result, is(notNullValue()));
+        assertThat(result, hasSize(2));
+        assertThat(result, contains(stations.get(1), stations.get(0)));
     }
 
     @Test
-    public void testOrderedMO(){
+    public void testOrderedMO() {
         final String prefix = "МО";
         final Collection<Station> result = task.getStationsByTwoFirstLetters(prefix);
-        log.info("By 2 letters : {} ---> {}", prefix,result);
-        assertThat(result,is(notNullValue()));
-        assertThat(result,hasSize(3));
-        assertThat(result,contains(stations.get(4), stations.get(3), stations.get(2)));
+        log.info("By 2 letters : {} ---> {}", prefix, result);
+        assertThat(result, is(notNullValue()));
+        assertThat(result, hasSize(3));
+        assertThat(result, contains(stations.get(4), stations.get(3), stations.get(2)));
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void  wrong1(){
+    public void wrong1() {
         new StationTask(null);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void  wrong2(){
+    public void wrong2() {
         new StationTask(new ArrayList<>());
     }
 

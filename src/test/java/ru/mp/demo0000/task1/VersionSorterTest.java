@@ -2,15 +2,12 @@ package ru.mp.demo0000.task1;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import ru.mp.demo0000.task1.VersionSorter;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
 import static org.junit.Assert.assertThat;
 
@@ -38,7 +35,7 @@ public class VersionSorterTest {
         log.info("Sorted versions list : {}", result);
         assertThat(result, is(notNullValue()));
         assertThat(result.size(), is(equalTo(given.size())));
-        assertThat(result,contains("1.0", "1.2", "1.2.3", "2.4.31", "3.0", "3.0.13"));
+        assertThat(result, contains("1.0", "1.2", "1.2.3", "2.4.31", "3.0", "3.0.13"));
     }
 
     @Test
@@ -50,6 +47,6 @@ public class VersionSorterTest {
         log.info("Sorted versions list : {}", result);
         assertThat(result, is(notNullValue()));
         assertThat(result.size(), is(equalTo(given.size())));
-        assertThat(result,contains("1.0-SNAPSHOT", "1.0", "1.2-SNAPSHOT", "1.2", "1.2.3", "2.4.31", "3.0", "3.0.13"));
+        assertThat(result, contains("1.0-SNAPSHOT", "1.0", "1.2-SNAPSHOT", "1.2", "1.2.3", "2.4.31", "3.0", "3.0.13"));
     }
 }

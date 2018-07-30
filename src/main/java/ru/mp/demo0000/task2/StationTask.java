@@ -1,6 +1,5 @@
 package ru.mp.demo0000.task2;
 
-import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.TreeMultimap;
 import org.apache.commons.lang3.StringUtils;
@@ -28,20 +27,20 @@ public class StationTask {
     }
 
     StationTask(final List<Station> stationList) {
-        if(stationList==null || stationList.isEmpty()){
+        if (stationList == null || stationList.isEmpty()) {
             throw new IllegalArgumentException("Station list can't be empty");
         }
         stationList.stream()
                 .map(StatonTokenizer::makeToken)
-                .forEach(t -> database.put(t.getFirstLetters(),t.getValue()));
+                .forEach(t -> database.put(t.getFirstLetters(), t.getValue()));
     }
 
     Collection<Station> getStationsByTwoFirstLetters(String prefix) {
-        if(prefix==null || StringUtils.isBlank(prefix)){
+        if (prefix == null || StringUtils.isBlank(prefix)) {
             return Collections.emptyList();
         }
         final String effectivePrefix = prefix.trim().toUpperCase();
-        if(!database.containsKey(effectivePrefix)){
+        if (!database.containsKey(effectivePrefix)) {
             return Collections.emptyList();
         }
         return database.get(effectivePrefix);

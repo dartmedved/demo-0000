@@ -9,7 +9,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-class Station implements Comparable<Station>{
+class Station implements Comparable<Station> {
     private String name;
 
     @Override
